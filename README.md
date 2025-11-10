@@ -49,6 +49,38 @@ Veuillez utiliser un préfixe pour vos messages de commit :
 
 ---
 
-**Ceci est une base solide pour votre équipe.**
 
-**Voulez-vous procéder au clonage du dépôt et à la création de la structure des packages dans votre IDE ?**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
