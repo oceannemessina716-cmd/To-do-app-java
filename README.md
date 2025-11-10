@@ -1,5 +1,4 @@
 # To-do-app-java
-# Java Todo List App
 
 ## 🎯 Objectif du Projet
 Développement d'une application de gestion de tâches (Todo List) en mode console, implémentée en Java. Ce projet sert de base pour l'apprentissage de la Programmation Orientée Objet (POO) et de la séparation des préoccupations via des packages.
@@ -28,7 +27,7 @@ Le projet est organisé autour de trois packages principaux pour garantir une ar
 1.  **Cloner le dépôt :**
     ```bash
     git clone [URL_DU_DEPOT]
-    cd Java-TodoList-App
+    cd To-do-app-java
     ```
 2.  **Ouvrir dans l'IDE :** Importez le projet dans votre IDE préféré (IntelliJ, Eclipse, VS Code).
 3.  **Lancer :** Exécutez la méthode `main` dans la classe `MainApp` (`com.todo.ui`).
