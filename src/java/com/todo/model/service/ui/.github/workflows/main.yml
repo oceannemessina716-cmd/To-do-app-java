@@ -1,0 +1,49 @@
+name: CI/CD du Projet Java (Todo List)
+
+# Déclenche le workflow sur les événements 'push' et 'pull_request'
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+# Définit un ensemble de tâches à exécuter
+jobs:
+  build:
+    # Exécuter sur un environnement Ubuntu
+    runs-on: ubuntu-latest
+    
+    # Étapes du processus de construction (Build)
+    steps:
+    # 1. Cloner le code depuis le dépôt
+    - uses: actions/checkout@v4
+      with:
+        # Cloner le dépôt et récupérer l'historique complet, essentiel pour la PR
+        fetch-depth: 0 
+
+    # 2. Configurer l'environnement Java
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        
+    # 3. Construire et tester le projet (Exemple avec Maven)
+    # Si vous utilisez Gradle, remplacez les étapes ci-dessous par la commande Gradle appropriée
+    - name: Build and Test with Maven
+      run: |
+        # Compiler, exécuter les tests unitaires (s'ils existent), et créer le JAR/classes
+        mvn -B package --file pom.xml
+        
+    # 4. (Optionnel) Publier un rapport de tests ou l'artefact
+    - name: Upload Artifact (JAR/Classes)
+      uses: actions/upload-artifact@v4
+      with:
+        name: todo-app-build-${{ github.sha }}
+        path: target/classes/
+        # Conserve l'artefact pendant 5 jours
+        retention-days: 5
